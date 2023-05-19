@@ -6,7 +6,7 @@ const Navbar = () => {
         <li><Link to="/alltoys">All Toys</Link></li>
         <li><Link to="/mytoys">My Toys</Link></li>
         <li><Link to="/addatoy">Add A Toy</Link></li>
-        <li><Link to="/blogs"> Blogs</Link></li>
+        <li><Link to="/blogs">Blogs</Link></li>
     </>
     return (
         <div className="navbar bg-base-100">
