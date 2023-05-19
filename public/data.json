@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "name": "Superman",
+        "image": "https://i.ibb.co/h1sypW8/superman.jpg",
+        "description": "Superman action figure with detachable cape.",
+        "price": 19.99,
+        "inStock": true
+    },
+    {
+        "id": 2,
+        "name": "Spider-Man",
+        "image": "https://i.ibb.co/yWsXv33/spideman.jpg",
+        "description": "Spider-Man web-slinging action toy.",
+        "price": 14.99,
+        "inStock": false
+    },
+    {
+        "id": 3,
+        "name": "Batman",
+        "image": "https://i.ibb.co/BrTBX2g/batman.jpg",
+        "description": "Batman collectible figurine with utility belt.",
+        "price": 24.99,
+        "inStock": true
+    },
+    {
+        "id": 4,
+        "name": "Wanda",
+        "image": "https://i.ibb.co/QmBJRPt/wanda.jpg",
+        "description": "Batman collectible figurine with utility belt.",
+        "price": 24.99,
+        "inStock": true
+    },
+    {
+        "id": 5,
+        "name": "Doctor Strange",
+        "image": "https://i.ibb.co/VScGkMW/Doctor-Strange.jpg",
+        "description": "Batman collectible figurine with utility belt.",
+        "price": 24.99,
+        "inStock": true
+    },
+    {
+        "id": 6,
+        "name": "Ironman",
+        "image": "https://i.ibb.co/YLKskFX/ironman.jpg",
+        "description": "Batman collectible figurine with utility belt.",
+        "price": 24.99,
+        "inStock": true
+    },
+    {
+        "id": 7,
+        "name": "Wonder Woman",
+        "image": "https://i.ibb.co/sWwPRBW/Wonder-Woman.jpg",
+        "description": "Batman collectible figurine with utility belt.",
+        "price": 24.99,
+        "inStock": true
+    }
+]
