@@ -1,42 +1,24 @@
-import { FaGoogle } from 'react-icons/fa';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
-import { useContext } from 'react';
-import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
-import app from '../../firebase/firebase.config';
 
-const login = () => {
-    const { signIn } = useContext(AuthContext);
+const Register = () => {
+    const { createUser } = useContext(AuthContext);
 
-    const handleLogin = event => {
-        event.preventDefault();
+    const handleRegister = event => {
         event.preventDefault();
         const form = event.target;
+        const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
-
-        signIn(email, password)
+        console.log(name, email, password);
+        createUser(email, password)
             .then(result => {
-                const loggedUser = result.user;
-                console.log(loggedUser);
+                const createdUser = result.user;
+                console.log(createdUser);
             })
             .catch(error => {
-                console.log(error);
-            })
-    }
-    // Google Login
-    const auth = getAuth(app);
-    const googleProvider = new GoogleAuthProvider();
-
-    const handleGoogleSignIn = () => {
-        signInWithPopup(auth, googleProvider)
-            .then(result => {
-                const loggedUser = result.user;
-                console.log(loggedUser);
-            })
-            .catch(error => {
-                console.log('error', error.message)
+                console.log(error.message);
             })
     }
     return (
@@ -44,8 +26,14 @@ const login = () => {
             <div className="hero-content flex-col lg:flex-row">
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <div className="card-body">
-                        <h1 className="text-3xl font-bold text-center">Login</h1>
-                        <form onSubmit={handleLogin}>
+                        <h1 className="text-3xl font-bold text-center">Register</h1>
+                        <form onSubmit={handleRegister}>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Name</span>
+                                </label>
+                                <input type="text" name='name' placeholder="name" className="input input-bordered" />
+                            </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
@@ -62,11 +50,10 @@ const login = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Login</button>
-                                <button onClick={handleGoogleSignIn} className="btn btn-outline btn-warning mt-3"><FaGoogle className='me-1' />Google Sign-in</button><br />
+                                <button className="btn btn-primary">Register</button>
                             </div>
                         </form>
-                        <p>Don't have an Account? <Link className='text-blue-500' to="/register">Register</Link></p>
+                        <p> Already have an Account? <Link className='text-blue-500' to="/login">Login</Link></p>
                     </div>
                 </div>
             </div>
@@ -74,4 +61,4 @@ const login = () => {
     );
 };
 
-export default login;
+export default Register;
