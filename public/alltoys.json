@@ -1,0 +1,184 @@
+[
+    {
+        "toy_name": "Spider-Man Action Figure",
+        "sub_category": "Action Figures",
+        "price": "$19.99",
+        "available_quantity": 10,
+        "seller_name": "John Doe"
+    },
+    {
+        "toy_name": "Batman Batmobile",
+        "sub_category": "Vehicles",
+        "price": "$29.99",
+        "available_quantity": 5,
+        "seller_name": "Jane Smith"
+    },
+    {
+        "toy_name": "Wonder Woman Doll",
+        "sub_category": "Dolls",
+        "price": "$14.99",
+        "available_quantity": 8,
+        "seller_name": "Mark Johnson"
+    },
+    {
+        "toy_name": "Iron Man Helmet",
+        "sub_category": "Accessories",
+        "price": "$49.99",
+        "available_quantity": 3,
+        "seller_name": "Sarah Thompson"
+    },
+    {
+        "toy_name": "Captain America Shield",
+        "sub_category": "Accessories",
+        "price": "$39.99",
+        "available_quantity": 7,
+        "seller_name": "Michael Brown"
+    },
+    {
+        "toy_name": "Superman Action Figure",
+        "sub_category": "Action Figures",
+        "price": "$24.99",
+        "available_quantity": 6,
+        "seller_name": "Emily Davis"
+    },
+    {
+        "toy_name": "Hulk Smash Hands",
+        "sub_category": "Accessories",
+        "price": "$12.99",
+        "available_quantity": 9,
+        "seller_name": "Robert Wilson"
+    },
+    {
+        "toy_name": "Black Widow Figure",
+        "sub_category": "Action Figures",
+        "price": "$17.99",
+        "available_quantity": 4,
+        "seller_name": "Jennifer Lee"
+    },
+    {
+        "toy_name": "Thor Hammer",
+        "sub_category": "Accessories",
+        "price": "$34.99",
+        "available_quantity": 2,
+        "seller_name": "David Rodriguez"
+    },
+    {
+        "toy_name": "Aquaman Trident",
+        "sub_category": "Accessories",
+        "price": "$27.99",
+        "available_quantity": 5,
+        "seller_name": "Linda Martinez"
+    },
+    {
+        "toy_name": "Green Lantern Ring",
+        "sub_category": "Accessories",
+        "price": "$9.99",
+        "available_quantity": 12,
+        "seller_name": "Thomas Wilson"
+    },
+    {
+        "toy_name": "Catwoman Action Figure",
+        "sub_category": "Action Figures",
+        "price": "$16.99",
+        "available_quantity": 3,
+        "seller_name": "Jessica Thompson"
+    },
+    {
+        "toy_name": "The Flash Mask",
+        "sub_category": "Accessories",
+        "price": "$7.99",
+        "available_quantity": 15,
+        "seller_name": "Ryan Davis"
+    },
+    {
+        "toy_name": "Robin Costume",
+        "sub_category": "Costumes",
+        "price": "$22.99",
+        "available_quantity": 6,
+        "seller_name": "Rebecca Harris"
+    },
+    {
+        "toy_name": "Wolverine Claws",
+        "sub_category": "Accessories",
+        "price": "$11.99",
+        "available_quantity": 8,
+        "seller_name": "Andrew Wilson"
+    },
+    {
+        "toy_name": "Storm Action Figure",
+        "sub_category": "Action Figures",
+        "price": "$18.99",
+        "available_quantity": 2,
+        "seller_name": "Christine White"
+    },
+    {
+        "toy_name": "Doctor Strange Cape",
+        "sub_category": "Accessories",
+        "price": "$32.99",
+        "available_quantity": 4,
+        "seller_name": "Daniel Brown"
+    },
+    {
+        "toy_name": "Supergirl Doll",
+        "sub_category": "Dolls",
+        "price": "$15.99",
+        "available_quantity": 9,
+        "seller_name": "Stephanie Martinez"
+    },
+    {
+        "toy_name": "Deadpool Action Figure",
+        "sub_category": "Action Figures",
+        "price": "$21.99",
+        "available_quantity": 7,
+        "seller_name": "Jonathan Wilson"
+    },
+    {
+        "toy_name": "Harley Quinn Hammer",
+        "sub_category": "Accessories",
+        "price": "$13.99",
+        "available_quantity": 3,
+        "seller_name": "Melissa Johnson"
+    },
+    {
+        "toy_name": "Ant-Man Helmet",
+        "sub_category": "Accessories",
+        "price": "$28.99",
+        "available_quantity": 6,
+        "seller_name": "George Davis"
+    },
+    {
+        "toy_name": "Black Panther Mask",
+        "sub_category": "Accessories",
+        "price": "$9.99",
+        "available_quantity": 11,
+        "seller_name": "Amy Wilson"
+    },
+    {
+        "toy_name": "Batgirl Figure",
+        "sub_category": "Action Figures",
+        "price": "$19.99",
+        "available_quantity": 5,
+        "seller_name": "Lauren Thompson"
+    },
+    {
+        "toy_name": "Shazam Costume",
+        "sub_category": "Costumes",
+        "price": "$24.99",
+        "available_quantity": 8,
+        "seller_name": "Christopher Garcia"
+    },
+    {
+        "toy_name": "Star-Lord Blaster",
+        "sub_category": "Accessories",
+        "price": "$17.99",
+        "available_quantity": 4,
+        "seller_name": "Olivia Clark"
+    },
+    {
+        "toy_name": "Hawkeye Bow and Arrow",
+        "sub_category": "Accessories",
+        "price": "$14.99",
+        "available_quantity": 6,
+        "seller_name": "William Davis"
+    }
+]

@@ -9,7 +9,7 @@ const Footer = () => {
                     <br />
                     <small>Providing reliable tech since 1992</small>
                     <br />
-                    <span>Copyright © 2023 - All right reserved by ACME Industries Ltd</span>
+                    <span>Copyright © 2023 - All right reserved by SuperHero Toy Store Ltd.</span>
                 </p>
             </div>
             <div>
