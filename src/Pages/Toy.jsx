@@ -1,8 +1,6 @@
-import { FaStar } from 'react-icons/fa';
-import { useLoaderData, useParams } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 
 const Toy = () => {
-    const { _id, picture, toy_name, seller_name, seller_email, price, rating, available_quantity, detail_description } = useParams();
     const toy = useLoaderData();
     return (
         <div className="card w-full bg-base-100 shadow-xl mx-auto border border-base-300 rounded-lg overflow-hidden">
@@ -17,9 +15,6 @@ const Toy = () => {
                 <p><b>Rating:</b> {Array(Math.round(toy.rating)).fill(<span className="text-yellow-500">&#9733;</span>)} {toy.rating}</p>
                 <p><b>Available Quantity:</b> {toy.available_quantity}</p>
                 <p className="break-words"><b>Detail Description:</b> {toy.detail_description}</p>
-                <div className="card-actions mt-4">
-                    <button className="btn btn-primary">Buy Now</button>
-                </div>
             </div>
         </div>
     );

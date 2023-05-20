@@ -4,7 +4,6 @@
         "name": "Action Figures",
         "toys": [
             {
-                "id": 1,
                 "name": "Superman Action Figure",
                 "image": "https://example.com/superman.jpg",
                 "price": 19.99,
@@ -12,7 +11,6 @@
                 "detailsUrl": "https://example.com/superman-details"
             },
             {
-                "id": 2,
                 "name": "Spider-Man Action Figure",
                 "image": "https://example.com/spiderman.jpg",
                 "price": 14.99,
@@ -26,7 +24,6 @@
         "name": "Vehicles & Playsets",
         "toys": [
             {
-                "id": 3,
                 "name": "Batmobile Vehicle",
                 "image": "https://example.com/batmobile.jpg",
                 "price": 29.99,
@@ -34,7 +31,6 @@
                 "detailsUrl": "https://example.com/batmobile-details"
             },
             {
-                "id": 4,
                 "name": "Avengers Playset",
                 "image": "https://example.com/avengers.jpg",
                 "price": 39.99,
@@ -48,7 +44,6 @@
         "name": "Role-Play & Costumes",
         "toys": [
             {
-                "id": 5,
                 "name": "Wonder Woman Costume",
                 "image": "https://example.com/wonderwoman.jpg",
                 "price": 24.99,
@@ -56,7 +51,6 @@
                 "detailsUrl": "https://example.com/wonderwoman-details"
             },
             {
-                "id": 6,
                 "name": "Iron Man Mask",
                 "image": "https://example.com/ironman.jpg",
                 "price": 9.99,
