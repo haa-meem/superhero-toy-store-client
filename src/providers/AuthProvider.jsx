@@ -18,6 +18,11 @@ const AuthProvider = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password);
     }
 
+    const logOut = () => {
+        setLoading(true);
+        return signOut(auth);
+    }
+
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, loggedUser => {
             console.log('logged in user inside auth state observer', loggedUser)
@@ -33,7 +38,8 @@ const AuthProvider = ({ children }) => {
         user,
         loading,
         createUser,
-        signIn
+        signIn,
+        logOut
     }
     return (
         <AuthContext.Provider value={authInfo}>
