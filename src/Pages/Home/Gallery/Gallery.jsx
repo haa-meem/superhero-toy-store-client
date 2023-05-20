@@ -4,7 +4,7 @@ const Gallery = () => {
     const [gallery, setGallery] = useState([]);
 
     useEffect(() => {
-        fetch('data.json')
+        fetch('http://localhost:5000/gallery')
             .then(res => res.json())
             .then(data => setGallery(data))
     }, [])
