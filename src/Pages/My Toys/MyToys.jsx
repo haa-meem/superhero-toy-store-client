@@ -1,8 +1,13 @@
 import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const MyToys = () => {
+    //Website name changing in every route
+    useEffect(() => {
+        document.title = 'SuperHero Toy Store | My Toys'
+    }, []);
+
     const initialToys = useLoaderData();
     const [toys, setToys] = useState(initialToys);
 

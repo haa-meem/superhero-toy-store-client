@@ -1,7 +1,12 @@
 import { Link } from 'react-router-dom';
 import pic from '../assets/not_found_404.jpg'
+import { useEffect } from 'react';
 
 const NotFound = () => {
+    //Website name changing in every route
+    useEffect(() => {
+        document.title = 'SuperHero Toy Store | 404'
+    }, []);
     return (
         <div className='text-center bg-black'>
             <img className='lg:w-10/12 mx-auto' src={pic} alt="" />

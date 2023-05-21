@@ -1,4 +1,10 @@
+import { useEffect } from "react";
+
 const Blogs = () => {
+    //Website name changing in every route
+    useEffect(() => {
+        document.title = 'SuperHero Toy Store | Blogs'
+    }, []);
     return (
         <div className='text-center mx-2'>
             <h1 className='text-warning text-5xl mb-3'>My Q&A Blog</h1>

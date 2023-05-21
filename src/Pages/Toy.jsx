@@ -1,6 +1,11 @@
+import { useEffect } from 'react';
 import { useLoaderData } from 'react-router-dom';
 
 const Toy = () => {
+    //Website name changing in every route
+    useEffect(() => {
+        document.title = 'SuperHero Toy Store | View Details'
+    }, []);
     const toy = useLoaderData();
     return (
         <div className="card w-full bg-base-100 shadow-xl mx-auto border border-base-300 rounded-lg overflow-hidden">

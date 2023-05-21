@@ -1,6 +1,11 @@
+import { useEffect } from "react";
 import Swal from "sweetalert2";
 
 const AToy = () => {
+    //Website name changing in every route
+    useEffect(() => {
+        document.title = 'SuperHero Toy Store | Add A Toy'
+    }, []);
     const handleAddToy = (event) => {
         event.preventDefault();
 
@@ -47,7 +52,7 @@ const AToy = () => {
                     text: 'Your Toy Added to My Toys Successfully',
                     icon: 'success',
                     confirmButtonText: 'Cool'
-                  })
+                })
             });
     };
 

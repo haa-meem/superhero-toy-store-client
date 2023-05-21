@@ -1,8 +1,13 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 
 const Register = () => {
+    //Website name changing in every route
+    useEffect(() => {
+        document.title = 'SuperHero Toy Store | Register'
+    }, []);
+
     const [error, setError] = useState(''); //error message state
     const [success, setSuccess] = useState(''); //success message
     const { createUser } = useContext(AuthContext);

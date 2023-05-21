@@ -8,6 +8,11 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const Home = () => {
+    //Website name changing in every route
+    useEffect(() => {
+        document.title = 'SuperHero Toy Store | Home'
+    }, []);
+    //AOS
     useEffect(() => {
         AOS.init({ duration: 1000 });
     }, []);

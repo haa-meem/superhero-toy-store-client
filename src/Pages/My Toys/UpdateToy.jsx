@@ -1,7 +1,13 @@
+import { useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateToy = () => {
+  //Website name changing in every route
+  useEffect(() => {
+    document.title = 'SuperHero Toy Store | Update Toy'
+  }, []);
+
   const toy = useLoaderData();
 
   const handleUpdateToy = (event) => {
@@ -32,7 +38,7 @@ const UpdateToy = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if(data.modifiedCount>0){
+        if (data.modifiedCount > 0) {
           Swal.fire({
             title: 'Success!',
             text: 'Your Toy has been updated successfully',

@@ -1,11 +1,15 @@
 import { FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import app from '../../firebase/firebase.config';
 
 const login = () => {
+    //Website name changing in every route
+    useEffect(() => {
+        document.title = 'SuperHero Toy Store | Login'
+    }, []);
     const { signIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
