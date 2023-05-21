@@ -22,7 +22,7 @@ const MyToys = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/atoy/${_id}`, {
+                fetch(`https://superhero-toy-store-server.vercel.app/atoy/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

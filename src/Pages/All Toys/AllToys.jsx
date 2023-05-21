@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const AllToys = () => {
     const [toys, setToys] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/alltoys')
+        fetch('https://superhero-toy-store-server.vercel.app/alltoys')
             .then(res => res.json())
             .then(data => setToys(data))
     }, []);

@@ -31,7 +31,7 @@ const AToy = () => {
         console.log(newToy);
 
         // send data to the server
-        fetch('http://localhost:5000/atoy', {
+        fetch('https://superhero-toy-store-server.vercel.app/atoy', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
