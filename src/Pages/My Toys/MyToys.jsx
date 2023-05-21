@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useState } from "react";
 
@@ -36,6 +36,7 @@ const MyToys = () => {
                                 'Your Toy has been deleted.',
                                 'success'
                             );
+
                         }
                     });
             }
@@ -76,12 +77,14 @@ const MyToys = () => {
                                 <td className="px-4 py-2 border text-center">{toy.quantity}</td>
                                 <td className="px-4 py-2 border text-center">{toy.description}</td>
                                 <td className="px-4 py-2 border text-center">
-                                    <button
-                                        className="bg-blue-500 text-white px-2 py-1 rounded mr-2 mb-2"
-                                        onClick={() => handleUpdateToy(toy._id)}
-                                    >
-                                        Update
-                                    </button>
+                                    <Link to={`/mytoys/${toy._id}`}>
+                                        <button
+                                            className="bg-blue-500 text-white px-2 py-1 rounded mr-2 mb-2"
+                                            onClick={() => handleUpdateToy(toy._id)}
+                                        >
+                                            Update
+                                        </button>
+                                    </Link>
                                     <button
                                         className="bg-red-500 text-white px-2 py-1 rounded"
                                         onClick={() => handleDeleteToy(toy._id)}
