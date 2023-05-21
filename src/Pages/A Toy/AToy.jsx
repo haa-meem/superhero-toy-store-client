@@ -39,7 +39,7 @@ const AToy = () => {
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
-                form.reset();
+                // form.reset();
             });
     };
 

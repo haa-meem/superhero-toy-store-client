@@ -1,8 +1,10 @@
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { useState } from "react";
 
 const MyToys = () => {
-    const toys = useLoaderData();
+    const initialToys = useLoaderData();
+    const [toys, setToys] = useState(initialToys);
 
     const handleUpdateToy = (_id) => {
         console.log(_id);
@@ -20,14 +22,24 @@ const MyToys = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                // Swal.fire(
-                //     'Deleted!',
-                //     'Your file has been deleted.',
-                //     'success'
-                // )
-                console.log('delete confirmed')
+                fetch(`http://localhost:5000/atoy/${_id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data.deletedCount > 0) {
+                            const remainingToys = toys.filter(toy => toy._id !== _id);
+                            setToys(remainingToys);
+                            Swal.fire(
+                                'Deleted!',
+                                'Your Toy has been deleted.',
+                                'success'
+                            );
+                        }
+                    });
             }
-        })
+        });
     };
 
     return (
@@ -37,7 +49,7 @@ const MyToys = () => {
                 <table className="min-w-full border border-gray-300">
                     <thead>
                         <tr>
-                            <th className="px-4 py-2 border">Picture URL</th>
+                            <th className="px-2 py-2 border">Picture</th>
                             <th className="px-4 py-2 border">Name</th>
                             <th className="px-4 py-2 border">Seller Name</th>
                             <th className="px-4 py-2 border">Seller Email</th>
@@ -52,7 +64,9 @@ const MyToys = () => {
                     <tbody>
                         {toys.map((toy) => (
                             <tr key={toy._id}>
-                                <td className="px-4 py-2 border text-center">{toy.pictureUrl}</td>
+                                <td className="px-2 py-2 border text-center">
+                                    <img src={toy.pictureUrl} alt={toy.pictureUrl} className="rounded-xl lg:h-fit lg:w-fit mx-auto" />
+                                </td>
                                 <td className="px-4 py-2 border text-center">{toy.name}</td>
                                 <td className="px-4 py-2 border text-center">{toy.sellerName}</td>
                                 <td className="px-4 py-2 border text-center">{toy.sellerEmail}</td>
@@ -63,7 +77,7 @@ const MyToys = () => {
                                 <td className="px-4 py-2 border text-center">{toy.description}</td>
                                 <td className="px-4 py-2 border text-center">
                                     <button
-                                        className="bg-blue-500 text-white px-2 py-1 rounded mr-2"
+                                        className="bg-blue-500 text-white px-2 py-1 rounded mr-2 mb-2"
                                         onClick={() => handleUpdateToy(toy._id)}
                                     >
                                         Update
