@@ -16,7 +16,7 @@
 * Database: MongoDB
 
 ## _How to run the project_
-## _The website is hosted on [Firebase] and can be accessed at [(https://superhero-toy-store-9ad2e.web.app/)]. As a user, you can browse the toy collection, search for specific toys, read reviews, and make purchases._
+## _The website is hosted on Firebase and can be accessed at (https://superhero-toy-store-9ad2e.web.app/). As a user, you can browse the toy collection, search for specific toys, read reviews, and make purchases._
 ## _If you want to contribute to the project, you can clone the repository and submit a pull request. To set up the project locally, you will need to have Node.js and MongoDB installed on your machine. Here are the basic steps:_
 * Clone the repository to your local machine.
 * Install the required Node.js packages using npm install.
