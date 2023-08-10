@@ -11,7 +11,7 @@ const Category = () => {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        fetch('https://superhero-toy-store-server.vercel.app/alltoys')
+        fetch('https://superhero-toy-store-server-haa-meem.vercel.app/alltoys')
             .then(res => res.json())
             .then(data => setCategories(data))
     }, [])
@@ -97,7 +97,7 @@ const Category = () => {
                 {activeTab === 3 &&
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                         {thirdThreeObjects.map((item, index) => (
-                            <div key={index} className="flex justify-center">
+                            <div key={`category_${index}`} className="flex justify-center">
                                 <div className="card bg-base-100 shadow-xl">
                                     <figure className="px-4 sm:px-6 pt-6 sm:pt-8">
                                         <img src={item.picture} alt={item.toy_name} className="rounded-xl" />

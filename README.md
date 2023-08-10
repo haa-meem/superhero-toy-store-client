@@ -23,7 +23,7 @@
 * Set up a MongoDB database and update the connection details in the backend server file.
 * Add sample toy data to the MongoDB database.
 * Start the development server using npm start.
-* Open your web browser and navigate to https://superhero-toy-store-server.vercel.app/
+* Open your web browser and navigate to https://superhero-toy-store-server-haa-meem.vercel.app/
 ---
 # **My Opinion**
 ## _I'm proud of the effort I put into this project. However, there are a few areas where I faced challenges:_

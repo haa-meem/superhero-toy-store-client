@@ -40,7 +40,7 @@ const router = createBrowserRouter([
             {
                 path: 'alltoys/:id',
                 element: <PrivateRoute><Toy></Toy></PrivateRoute>,
-                loader: ({ params }) => fetch(`https://superhero-toy-store-server.vercel.app/alltoys/${params.id}`)
+                loader: ({ params }) => fetch(`https://superhero-toy-store-server-haa-meem.vercel.app/alltoys/${params.id}`)
             },
             {
                 path: 'atoy',
@@ -49,12 +49,12 @@ const router = createBrowserRouter([
             {
                 path: 'mytoys',
                 element: <PrivateRoute><MyToys></MyToys></PrivateRoute>,
-                loader:()=>fetch('https://superhero-toy-store-server.vercel.app/atoy')
+                loader:()=>fetch('https://superhero-toy-store-server-haa-meem.vercel.app/atoy')
             },
             {
                 path: 'mytoys/:id',
                 element: <PrivateRoute><UpdateToy></UpdateToy></PrivateRoute>,
-                loader:({params})=>fetch(`https://superhero-toy-store-server.vercel.app/atoy/${params.id}`)
+                loader:({params})=>fetch(`https://superhero-toy-store-server-haa-meem.vercel.app/atoy/${params.id}`)
             }
         ]
     },

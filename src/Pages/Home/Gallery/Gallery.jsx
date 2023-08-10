@@ -4,7 +4,7 @@ const Gallery = () => {
     const [gallery, setGallery] = useState([]);
 
     useEffect(() => {
-        fetch('https://superhero-toy-store-server.vercel.app/gallery')
+        fetch('https://superhero-toy-store-server-haa-meem.vercel.app/gallery')
             .then(res => res.json())
             .then(data => setGallery(data))
     }, [])

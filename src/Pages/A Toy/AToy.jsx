@@ -1,141 +1,138 @@
-import { useEffect } from "react";
+import { useContext } from "react";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../providers/AuthProvider";
 
-const AToy = () => {
-    //Website name changing in every route
-    useEffect(() => {
-        document.title = 'SuperHero Toy Store | Add A Toy'
-    }, []);
-    const handleAddToy = (event) => {
+const AddClass = () => {
+    const { user } = useContext(AuthContext);
+
+    const handleAddClass = (event) => {
         event.preventDefault();
 
         const form = event.target;
 
-        const pictureUrl = form.pictureUrl.value;
-        const name = form.name.value;
-        const sellerName = form.sellerName.value;
-        const sellerEmail = form.sellerEmail.value;
-        const subCategory = form.subCategory.value;
+        const className = form.className.value;
+        const classImage = form.classImage.value;
+        const instructorName = user.displayName;
+        const instructorEmail = user.email;
+        const availableSeats = form.availableSeats.value;
         const price = form.price.value;
-        const rating = form.rating.value;
-        const quantity = form.quantity.value;
-        const description = form.description.value;
 
-        const newToy = {
-            pictureUrl,
-            name,
-            sellerName,
-            sellerEmail,
-            subCategory,
+        const newClass = {
+            className,
+            classImage,
+            instructorName,
+            instructorEmail,
+            availableSeats,
             price,
-            rating,
-            quantity,
-            description,
+            status: "pending",
         };
 
-        console.log(newToy);
+        console.log(newClass);
 
         // send data to the server
-        fetch('https://superhero-toy-store-server.vercel.app/atoy', {
-            method: 'POST',
+        fetch("https://superhero-toy-store-server-haa-meem.vercel.app/atoy", {
+            method: "POST",
             headers: {
-                'content-type': 'application/json',
+                "content-type": "application/json",
             },
-            body: JSON.stringify(newToy),
+            body: JSON.stringify(newClass),
         })
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
-                // form.reset();
+                form.reset();
                 Swal.fire({
-                    title: 'Success!',
-                    text: 'Your Toy Added to My Toys Successfully',
-                    icon: 'success',
-                    confirmButtonText: 'Cool'
-                })
+                    title: "Success!",
+                    text: "Your Class Added Successfully",
+                    icon: "success",
+                    confirmButtonText: "Cool",
+                });
             });
     };
 
     return (
         <div className="bg-amber-300 p-24">
-            <h2 className="text-3xl font-extrabold text-center">Add a Toy</h2>
-            <form onSubmit={handleAddToy}>
+            <h2 className="text-3xl font-extrabold text-center">Add a Class</h2>
+            <form onSubmit={handleAddClass}>
                 <div className="mb-8">
                     <div className="form-control w-full">
                         <label className="label">
-                            <span className="label-text">Picture URL of the toy</span>
+                            <span className="label-text">Class Name</span>
                         </label>
                         <label className="input-group">
                             <input
                                 type="text"
-                                name="pictureUrl"
-                                placeholder="Picture URL"
+                                name="className"
+                                placeholder="Class Name"
                                 className="input input-bordered w-full"
                             />
                         </label>
                     </div>
                 </div>
-                <div className="md:flex mb-8">
-                    <div className="form-control md:w-1/2">
+                <div className="mb-8">
+                    <div className="form-control w-full">
                         <label className="label">
-                            <span className="label-text">Name</span>
+                            <span className="label-text">Class Image URL</span>
                         </label>
                         <label className="input-group">
                             <input
                                 type="text"
-                                name="name"
-                                placeholder="Name"
-                                className="input input-bordered w-full"
-                            />
-                        </label>
-                    </div>
-                    <div className="form-control md:w-1/2 ml-4">
-                        <label className="label">
-                            <span className="label-text">Seller Name</span>
-                        </label>
-                        <label className="input-group">
-                            <input
-                                type="text"
-                                name="sellerName"
-                                placeholder="Seller Name"
+                                name="classImage"
+                                placeholder="Class Image URL"
                                 className="input input-bordered w-full"
                             />
                         </label>
                     </div>
                 </div>
-                <div className="md:flex mb-8">
-                    <div className="form-control md:w-1/2">
+                <div className="mb-8">
+                    <div className="form-control w-full">
                         <label className="label">
-                            <span className="label-text">Seller Email</span>
+                            <span className="label-text">Instructor Name</span>
                         </label>
                         <label className="input-group">
                             <input
-                                type="email"
-                                name="sellerEmail"
-                                placeholder="Seller Email"
+                                type="text"
+                                name="instructorName"
+                                value={user.displayName}
+                                readOnly
                                 className="input input-bordered w-full"
                             />
                         </label>
                     </div>
-                    <div className="form-control md:w-1/2 ml-4">
+                </div>
+                <div className="mb-8">
+                    <div className="form-control w-full">
                         <label className="label">
-                            <span className="label-text">Sub-category</span>
+                            <span className="label-text">Instructor Email</span>
                         </label>
                         <label className="input-group">
-                            <select
-                                name="subCategory"
-                                className="select select-bordered w-full"
-                            >
-                                <option value="">Select a sub-category</option>
-                                <option value="Action Figures">Action Figures</option>
-                                <option value="Vehicles & Playsets">Vehicles & Playsets</option>
-                                <option value="Role-Play & Costumes">Role-Play & Costumes</option>
-                            </select>
+                            <input
+                                type="text"
+                                name="instructorEmail"
+                                value={user.email}
+                                readOnly
+                                className="input input-bordered w-full"
+                            />
                         </label>
                     </div>
                 </div>
-                <div className="md:flex mb-8">
-                    <div className="form-control md:w-1/2">
+                <div className="mb-8">
+                    <div className="form-control w-full">
+                        <label className="label">
+                            <span className="label-text">Available Seats</span>
+                        </label>
+                        <label className="input-group">
+                            <input
+                                type="number"
+                                name="availableSeats"
+                                placeholder="Available Seats"
+                                className="input input-bordered w-full"
+                            />
+                        </label>
+                    </div>
+                </div>
+                <div className="mb-8">
+                    <div className="form-control w-full">
                         <label className="label">
                             <span className="label-text">Price</span>
                         </label>
@@ -148,54 +145,11 @@ const AToy = () => {
                             />
                         </label>
                     </div>
-                    <div className="form-control md:w-1/2 ml-4">
-                        <label className="label">
-                            <span className="label-text">Rating</span>
-                        </label>
-                        <label className="input-group">
-                            <input
-                                type="number"
-                                name="rating"
-                                placeholder="Rating"
-                                className="input input-bordered w-full"
-                            />
-                        </label>
-                    </div>
                 </div>
-                <div className="mb-8">
-                    <div className="form-control w-full">
-                        <label className="label">
-                            <span className="label-text">Available Quantity</span>
-                        </label>
-                        <label className="input-group">
-                            <input
-                                type="number"
-                                name="quantity"
-                                placeholder="Available Quantity"
-                                className="input input-bordered w-full"
-                            />
-                        </label>
-                    </div>
-                </div>
-                <div className="mb-8">
-                    <div className="form-control w-full">
-                        <label className="label">
-                            <span className="label-text">Detail Description</span>
-                        </label>
-                        <label className="input-group">
-                            <textarea
-                                name="description"
-                                placeholder="Detail Description"
-                                className="textarea textarea-bordered w-full"
-                                rows="4"
-                            ></textarea>
-                        </label>
-                    </div>
-                </div>
-                <input type="submit" value="Add Toy" className="btn btn-block" />
+                <input type="submit" value="Add Class" className="btn btn-block" />
             </form>
         </div>
     );
 };
 
-export default AToy;
+export default AddClass;
